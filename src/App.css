@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+button {
+  background: rgba(252, 255, 236, 0.329);
+  border: 1px solid black;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background: #8d8a00;
+  transition: background-color 0.3s ease;
+}
