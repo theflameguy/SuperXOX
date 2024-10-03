@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Check live demo here: [Super XOX](https://theflameguy.github.io/SuperXOX/)
 
 ## Available Scripts
 
