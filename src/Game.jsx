@@ -1,9 +1,18 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import './Game.css';
 
 import { useState } from 'react';
 
 const initialBoards = Array(9).fill(null).map(() => Array(9).fill(null));
+
+const colorPallet = {
+  color1 : '#181C14',
+  color2 : '#3C3D37',
+  color3 : '#697565',
+  color4 : '#ECDFCC'
+
+}
 
 const WINNING_COMBINATIONS = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
@@ -36,17 +45,17 @@ function Game() {
   const [xIsNext, setXIsNext] = useState(true);
   const [winner, setWinner] = useState(null);
   const [lastMove, setLastMove] = useState([null,null]);
-
+  
   const checkInvalidMove = (boardIndex) => {
     if(calculateBoardWinner(boards[boardIndex])) return 1;
-
+    
     let invalid_move_flag = 0
     
     if(lastMove[1]!= null && lastMove[1]!=boardIndex) invalid_move_flag=1;
     if(lastMove[1]!= null && calculateBoardWinner(boards[lastMove[1]])) invalid_move_flag=0;
-
+    
     return invalid_move_flag
-
+    
   }
 
 
@@ -72,12 +81,41 @@ function Game() {
     setWinner(newWinner);
   };
 
+  const buttonStyle = (i) =>({
+    width: '60px',
+    height: '60px',
+    fontSize: '5rem',
+    color:'#EEEEEE', 
+    border: '1px solid black',
+    cursor: 'pointer',
+    outline: 'none',
+    overflow: 'hidden'
+  })
+
   const renderBoard = (boardIndex) => (
     <Board
       board={boards[boardIndex]}
       onClick={(cellIndex) => handleClick(boardIndex, cellIndex)}
+      
     />
   );
+
+  const miniBoardStyle =(i) =>({
+    border: '2px solid black',
+    padding: '2px',
+    background: checkInvalidMove(i) ?  '#393E46' : '#71C9CE',
+    transition: 'background-color 0.5s ease',
+    overflow: 'hidden'
+  })
+
+  const fullBoardStyle = {
+    margin: 'auto',
+    width:'35.5rem',
+    border:'1px solid white',
+    display: 'grid', 
+    gridTemplateColumns: 'auto auto auto'
+
+  }
 
   return (
     <div>
@@ -86,9 +124,9 @@ function Game() {
           ? `Next player: ${xIsNext ? 'X' : 'O'}`
           : `Woohoo!! ${winner} won`}
       </div>
-      <div style={{margin: 'auto', width:'34rem', display: 'grid', gridTemplateColumns: 'auto auto auto' }}>
+      <div className='fullBoard'>
         {Array(9).fill(null).map((_, i) => (
-          <div key={i} style={{ border: '2px solid black', padding: '1px',background: checkInvalidMove(i) ? 'rgba(209, 57, 0, 0.329)' : 'white', transition: 'background-color 0.4s ease'}}>
+          <div className='miniBoard' key={i} style={miniBoardStyle(i)}>
             {renderBoard(i)}
           </div>
         ))}
@@ -98,10 +136,12 @@ function Game() {
   );
 }
 
-function Square({ value, onClick }) {
+
+
+function Square({ value, onClick, style }) {
   return (
     <button 
-      style={{ width: '60px', height: '60px', fontSize: '3rem' }}
+      style={style}
       onClick={onClick}
     >
       {value}
@@ -109,7 +149,7 @@ function Square({ value, onClick }) {
   );
 }
 
-function Board({ board, onClick }) {
+function Board({ board, onClick}) {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto' }}>
       {board.map((cell, i) => (

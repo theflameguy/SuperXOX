@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SuperXOX/static/css/main.025b0638.css",
+    "main.js": "/SuperXOX/static/js/main.5ffb0423.js",
+    "static/js/453.4aa603cb.chunk.js": "/SuperXOX/static/js/453.4aa603cb.chunk.js",
+    "index.html": "/SuperXOX/index.html",
+    "main.025b0638.css.map": "/SuperXOX/static/css/main.025b0638.css.map",
+    "main.5ffb0423.js.map": "/SuperXOX/static/js/main.5ffb0423.js.map",
+    "453.4aa603cb.chunk.js.map": "/SuperXOX/static/js/453.4aa603cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.025b0638.css",
+    "static/js/main.5ffb0423.js"
+  ]
+}
