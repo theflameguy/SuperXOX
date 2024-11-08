@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Created using React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is live here [Super XOX](https://theflameguy.github.io/SuperXOX/).
 
-## Available Scripts
+**Super Tic-Tac-Toe** (also known as **Ultimate Tic-Tac-Toe**) is a more complex variant of the traditional Tic-Tac-Toe game. It involves playing on a larger grid, which consists of 9 smaller 3x3 Tic-Tac-Toe boards. The game has the following rules:
 
-In the project directory, you can run:
+### 1. **Board Setup**:
+   - The game is played on a 9x9 grid, divided into 9 smaller 3x3 grids (each grid is a standard Tic-Tac-Toe board).
+   - Players are assigned either **X** or **O**.
 
-### `npm start`
+### 2. **Gameplay**:
+   - Players take turns placing their marks (X or O) on one of the 81 cells in the larger grid.
+   - **The twist**: The location where a player places their mark on the current board determines which smaller 3x3 board the opponent must play on next.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. **Rules for Movement**:
+   - On the first move, the player can place their mark anywhere on the large 9x9 grid.
+   - After that, the player's move determines the "target" smaller board for the next player. For example:
+     - If a player places their mark in the top-right cell of any smaller board, the opponent must place their mark on the corresponding cell of the **top-right** small 3x3 grid (within the larger 9x9 grid).
+     - If a player places a mark in the center of a small 3x3 board, the opponent must play in the center of one of the 9 smaller boards (if available).
+     - If a player places a mark in the bottom-right corner of any small board, the opponent must play in the bottom-right 3x3 grid on the larger board.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 4. **Winning a Small Grid**:
+   - A player wins a small 3x3 grid by getting three marks in a row (horizontally, vertically, or diagonally), just like regular Tic-Tac-Toe.
+   - When a small grid is won, the winning player’s mark is placed in the corresponding larger grid cell, which is also considered "controlled" by that player.
 
-### `npm test`
+### 5. **Winning the Game**:
+   - The overall winner is the first player to win 3 of the smaller 3x3 grids in a row (either horizontally, vertically, or diagonally).
+   - The game ends when a player controls 3 smaller boards in a row on the larger grid.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 6. **Special Cases**:
+   - If a player is forced to play in a board that has already been won or is full, they can choose any open cell on the remaining available boards.
+   - If a player wins a small board and the corresponding large grid cell is already taken, they can choose another valid move.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This adds an extra layer of strategy and complexity to the game, as players need to think not only about winning small boards but also about how to control the larger grid and limit their opponent's options.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Let me know if you'd like any more details or examples!
