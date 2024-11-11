@@ -90,10 +90,13 @@ function Game() {
   );
 
   const miniBoardStyle =(i) =>({
-    border: '1px solid grey',
-    padding: '2px',
-    background: checkInvalidMove(i) ?  '#393E46' : '#71C9CE',
+    border: '1px solid black',
+    width:'98%',
+    aspectRatio: '1/1',
+    // height: '90%',
+    // padding: '2px',
     margin: 'auto',
+    background: checkInvalidMove(i) ?  '#393E46' : '#71C9CE',
     transition: 'background-color 0.5s ease',
     overflow: 'hidden',
     display: 'grid',
@@ -136,11 +139,11 @@ function Square({ value, onClick, style }) {
 
 function Board({ board, onClick}) {
   return (
-    <div style={{ display: 'grid',gridGap: '0px' , gridTemplateColumns: 'auto auto auto' }}>
+    <> 
       {board.map((cell, i) => (
         <Square key={i} value={cell} onClick={() => onClick(i)} />
       ))}
-    </div>
+    </>
   );
 }
 
