@@ -90,10 +90,10 @@ function Game() {
   );
 
   const miniBoardStyle =(i) =>({
-    border: '2px solid black',
+    border: '1px solid black',
     padding: '2px',
     background: checkInvalidMove(i) ?  '#393E46' : '#71C9CE',
-    
+    margin: 'auto',
     transition: 'background-color 0.5s ease',
     overflow: 'hidden',
     display: 'grid',
