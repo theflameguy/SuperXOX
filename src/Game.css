@@ -1,8 +1,9 @@
 button {
     background-color: rgba(255, 255, 255, 0.1);
-    width: 60px;
-    height: 60px;
-    font-size: 4rem;
+    width: 4.25vw;   /* 60px; */
+    aspect-ratio: 1/1;
+    /* height: 60px;  60px; */
+    font-size: 2vw;
     color:#EEEEEE;
     border: 1px solid black;
     cursor: pointer;
@@ -16,30 +17,33 @@ button {
   }
 
 .fullBoard {
-    width: 10rem;
+    width: 40vw;
+    height: 40vw;
     margin: auto;
     border:1px solid white;
-    display: grid; 
+    display: grid;
     grid-template-columns: auto auto auto;
 }
   
   
   
   
-@media screen and (min-width: 710px) {
+@media screen and (max-width: 710px) {
     .fullBoard {
         margin: auto;
-        width:35.5rem;
+        width:90vw;
+        height:90vw;
         border:1px solid white;
         display: grid; 
         grid-template-columns: auto auto auto;
         }
     button {
-        width: 60px;
-        height: 60px;
-        font-size: 3rem;
+        width: 9.55vw;
+        aspect-ratio: 1/1;
+        /* height: 60px; */
+        font-size: 5vw;
         color:#EEEEEE; 
-        border: 1px solid black;
+        border: 0.5px solid black;
         cursor: pointer;
         outline: none;
         overflow: hidden;

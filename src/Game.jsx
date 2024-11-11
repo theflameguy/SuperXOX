@@ -81,17 +81,6 @@ function Game() {
     setWinner(newWinner);
   };
 
-  const buttonStyle = (i) =>({
-    width: '60px',
-    height: '60px',
-    fontSize: '5rem',
-    color:'#EEEEEE', 
-    border: '1px solid black',
-    cursor: 'pointer',
-    outline: 'none',
-    overflow: 'hidden'
-  })
-
   const renderBoard = (boardIndex) => (
     <Board
       board={boards[boardIndex]}
@@ -104,26 +93,22 @@ function Game() {
     border: '2px solid black',
     padding: '2px',
     background: checkInvalidMove(i) ?  '#393E46' : '#71C9CE',
+    
     transition: 'background-color 0.5s ease',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    display: 'grid',
+    gridTemplateColumns: 'auto auto auto'
   })
 
-  const fullBoardStyle = {
-    margin: 'auto',
-    width:'35.5rem',
-    border:'1px solid white',
-    display: 'grid', 
-    gridTemplateColumns: 'auto auto auto'
 
-  }
 
   return (
     <div>
-      <div>
+      <h3 style={{ padding: '15px', textAlign: 'center' }} >
         {!winner 
           ? `Next player: ${xIsNext ? 'X' : 'O'}`
           : `Woohoo!! ${winner} won`}
-      </div>
+      </h3>
       <div className='fullBoard'>
         {Array(9).fill(null).map((_, i) => (
           <div className='miniBoard' key={i} style={miniBoardStyle(i)}>
@@ -151,7 +136,7 @@ function Square({ value, onClick, style }) {
 
 function Board({ board, onClick}) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto' }}>
+    <div style={{ display: 'grid',gridGap: '0px' , gridTemplateColumns: 'auto auto auto' }}>
       {board.map((cell, i) => (
         <Square key={i} value={cell} onClick={() => onClick(i)} />
       ))}
