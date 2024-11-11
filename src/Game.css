@@ -17,6 +17,7 @@ button {
   }
 
 .fullBoard {
+    padding: 2px;
     width: 40vw;
     height: 40vw;
     margin: auto;
@@ -30,15 +31,16 @@ button {
   
 @media screen and (max-width: 710px) {
     .fullBoard {
+        padding: 2px;
         margin: auto;
-        width:90vw;
-        height:90vw;
+        width:85vw;
+        height:85vw;
         border:1px solid white;
         display: grid; 
         grid-template-columns: auto auto auto;
         }
     button {
-        width: 9.5vw;
+        width: 9vw;
         aspect-ratio: 1/1;
         /* height: 60px; */
         font-size: 5vw;
