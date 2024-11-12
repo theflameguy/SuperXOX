@@ -92,8 +92,8 @@ function Game() {
   const miniBoardStyle =(i) =>({
     border: '1px solid black',
     width:'98%',
-    aspectRatio: '1/1',
-    // height: '90%',
+    // aspectRatio: '1/1',
+    height: '98%',
     // padding: '2px',
     margin: 'auto',
     background: checkInvalidMove(i) ?  '#393E46' : '#71C9CE',

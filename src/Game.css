@@ -1,8 +1,8 @@
 button {
     background-color: rgba(255, 255, 255, 0.1);
     width: 4.3vw;   /* 60px; */
-    aspect-ratio: 1/1;
-    /* height: 50px; */
+    /* aspect-ratio: 1/1; */
+    height: 4.3vw;
     margin: auto;
     text-align: center;
     font-size: 3vw;
@@ -10,7 +10,7 @@ button {
     border: 1px solid black;
     cursor: pointer;
     outline: none;
-    overflow: hidden
+    /* overflow: hidden */
   }
   
   button:hover {
@@ -43,14 +43,14 @@ button {
         }
     button {
         width: 9vw;
-        aspect-ratio: 1/1;
-        /* height: 60px; */
-        font-size: 5vw;
+        /* aspect-ratio: 1/1; */
+        height: 9vw;
+        font-size: 3vw;
         text-align: center;
         color:#EEEEEE; 
         border: 0.5px solid black;
         cursor: pointer;
         outline: none;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
 }
